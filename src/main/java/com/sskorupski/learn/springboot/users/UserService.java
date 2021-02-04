@@ -15,4 +15,22 @@ public class UserService {
         return userDAO.getAll();
     }
 
+    public User create(User user) {
+        Long userId = userDAO.create(user);
+        user.setId(userId);
+        return user;
+    }
+
+    public User getById(Long id) {
+        return userDAO.getById(id);
+    }
+
+    public boolean update(User user) {
+        return userDAO.update(user);
+    }
+
+    public boolean delete(User user) {
+        return userDAO.delete(user);
+    }
+
 }
